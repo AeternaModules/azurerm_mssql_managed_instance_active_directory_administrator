@@ -1,3 +1,7 @@
+output "mssql_managed_instance_active_directory_administrators_id" {
+  description = "Map of id values across all mssql_managed_instance_active_directory_administrators, keyed the same as var.mssql_managed_instance_active_directory_administrators"
+  value       = { for k, v in azurerm_mssql_managed_instance_active_directory_administrator.mssql_managed_instance_active_directory_administrators : k => v.id }
+}
 output "mssql_managed_instance_active_directory_administrators_azuread_authentication_only" {
   description = "Map of azuread_authentication_only values across all mssql_managed_instance_active_directory_administrators, keyed the same as var.mssql_managed_instance_active_directory_administrators"
   value       = { for k, v in azurerm_mssql_managed_instance_active_directory_administrator.mssql_managed_instance_active_directory_administrators : k => v.azuread_authentication_only }
